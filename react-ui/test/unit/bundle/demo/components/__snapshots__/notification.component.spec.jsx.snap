@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification Component it matches the snapshot 1`] = `
+<div
+  className="styles__Alert-sc-18xwbcb-14 hFgRsu"
+>
+  <div
+    className="styles__Row-sc-18xwbcb-3 iYGMAK"
+  >
+    <strong>
+      Message Check
+    </strong>
+  </div>
+</div>
+`;

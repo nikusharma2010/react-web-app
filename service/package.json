@@ -1,0 +1,69 @@
+{
+  "name": "users-api",
+  "version": "1.1.0",
+  "description": "",
+  "main": "users/routes.js",
+  "scripts": {
+    "start": "docker-compose up --build  --force-recreate",
+    "start:server": "node app/server.js",
+    "stop": "docker-compose down --remove-orphans -v",
+    "start:dev": "docker-compose -f docker-compose.dev.yml up --build",
+    "dev": "nodemon --watch './**/*' app/server.js",
+    "test": "npm run lint && npm run test:coverage",
+    "lint": "eslint 'app/**/*.js' 'src/**/*.js' 'test/**/*.js'",
+    "lint:fix": "npm run lint -- --fix",
+    "test:unit": "mocha './test/unit/**/*.spec.js'",
+    "test:coverage": "nyc npm run test:unit",
+    "test:integration": "SUT_URL=http://localhost:3070 mocha -t 20000 -s 5000 './test/integration/run.test.js' --timeout 200000 --reporter mochawesome"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test:coverage"
+    }
+  },
+  "author": "Niku",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.5.0",
+    "eslint-config-semistandard": "^12.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-json": "^1.2.1",
+    "eslint-plugin-mocha": "^5.2.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^0.14.3",
+    "koa-send": "^5.0.0",
+    "lodash": "^4.17.15",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.3",
+    "mochawesome-report-generator": "^3.1.3",
+    "nyc": "^14.1.1",
+    "prettier": "^1.15.3",
+    "supertest": "^4.0.2",
+    "testdouble": "^3.8.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compress": "^3.0.0",
+    "koa-connect": "^2.0.1",
+    "koa-cors": "0.0.16",
+    "koa-helmet": "^4.0.0",
+    "koa-logger": "^3.2.0",
+    "koa-mysql": "^1.0.3",
+    "koa-router": "^7.4.0",
+    "lint-staged": "^8.1.0",
+    "moment": "^2.22.2",
+    "mysql": "^2.16.0",
+    "nconf": "^0.10.0",
+    "nodemon": "^1.18.10",
+    "util": "^0.11.1",
+    "winston": "^3.1.0"
+  }
+}

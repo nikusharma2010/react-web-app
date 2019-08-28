@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Component it matches the snapshot 1`] = `
+Array [
+  <div
+    className="styles__CardBody-sc-18xwbcb-1 cYcvwS"
+  />,
+  ")",
+]
+`;

@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Component it matches the snapshot 1`] = `
+<div
+  className="styles__Row-sc-18xwbcb-3 iYGMAK"
+>
+  <div
+    className="styles__Alert-sc-18xwbcb-14 hFgRsu"
+  >
+    <div
+      className="styles__Row-sc-18xwbcb-3 iYGMAK"
+    >
+      <strong>
+        Test
+      </strong>
+    </div>
+  </div>
+  <h3>
+    Create a New Employee record
+  </h3>
+  <div
+    className="styles__FormDiv-sc-18xwbcb-11 rkpVF"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <label>
+            Employee Number
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <input
+            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            id="employeeId"
+            name="employeeId"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <label>
+            First Name
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <input
+            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            id="firstName"
+            name="firstName"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <label>
+            Last Name
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <input
+            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            id="lastName"
+            name="lastName"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <label>
+            Mobile
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <input
+            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            id="mobile"
+            name="mobile"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <label>
+            Email
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <input
+            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            id="email"
+            name="email"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <a
+            href="/list"
+          >
+            <div
+              className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+            >
+              Back
+            </div>
+          </a>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        >
+          <button
+            className="styles__SubmitButton-sc-18xwbcb-12 dOKLAe"
+            style={Object {}}
+          >
+            Add User
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+.log
+reports
+.nyc_output
+.vscode
+.idea
+test/integration/report/*

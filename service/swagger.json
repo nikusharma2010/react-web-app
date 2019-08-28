@@ -1,0 +1,190 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Demo Users REST APIs",
+    "description": "Demo",
+    "contact": {
+      "email": "niku.sharma@gmail.com"
+    }
+  },
+  "host": "localhost:3070",
+  "tags": [
+    {
+      "name": "users",
+      "description": "Users APIs"
+    },
+    {
+      "name": "user/:id",
+      "description": "Get User by Id"
+    },
+    {
+      "name": "update user/:id",
+      "description": "Update User"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "List Users",
+        "description": "Get all users",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    },
+    "/user/:{id}": {
+      "get": {
+        "tags": [
+          "user/:id"
+        ],
+        "summary": "Get user by id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "user id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "policy": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "create user"
+        ],
+        "summary": "Add User",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "422": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/user/':{id}'": {
+      "put": {
+        "tags": [
+          "update user/:id"
+        ],
+        "summary": "Add User",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "user id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "422": {
+            "description": "user not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Users": {
+      "type": "object",
+      "properties": {
+        "policies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "User id",
+          "example": "1, 2"
+        },
+        "fisrtName": {
+          "type": "string",
+          "description": "User first Name",
+          "example": "James"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "User Last Name",
+          "example": "Smith"
+        },
+        "email": {
+          "type": "string",
+          "description": "User Email",
+          "example": "james.smith@gmail.com"
+        },
+        "mobile": {
+          "type": "number",
+          "description": "User Mobile no",
+          "example": "111111111"
+        }
+      }
+    }
+  }
+}

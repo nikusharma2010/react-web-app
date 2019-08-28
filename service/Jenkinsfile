@@ -1,0 +1,105 @@
+#!groovy
+
+@Library('cpt-jenkins-library') _
+import org.cpt.jenkins.NPM
+import org.cpt.jenkins.Binaries
+import org.cpt.jenkins.Git
+import org.cpt.jenkins.BuildStatusNotifier
+import org.cpt.jenkins.SlackBuildNotifier
+
+properties([gitLabConnection('Pensions Gitlab')])
+
+node('sbx') {
+    def gitLabNotifyer = new BuildStatusNotifier(_jenkins: this)
+    def slackBuildNotifier = new SlackBuildNotifier()
+
+    try {
+        gitLabNotifyer.notifyGitlab('running')
+        checkout scm
+        def npm = new NPM(_jenkins: this).init()
+        def binaries = new Binaries()
+        def git = new Git(_jenkins: this)
+        env.IBM_DB_INSTALLER_URL = binaries.getAssetURL('ibm_db/v10.5')
+        env.NVM_NODEJS_ORG_MIRROR = binaries.getAssetURL('node')
+        env.NODEJS_ORG_MIRROR = binaries.getAssetURL('node')
+        env.PHANTOMJS_CDNURL = binaries.getAssetURL('phantomjs')
+
+        def nodeEnv = docker.image('registry.sbx.zone/lbg/node:8.9.4');
+        stage('Install') {
+            nodeEnv.inside {
+                sh 'npm i'
+                sh 'cp db2license/db2consv_zs.lic node_modules/ibm_db/installer/clidriver/license/'
+            }
+        }
+
+        stage('Lint') {
+            nodeEnv.inside {
+                sh 'npm run lint'
+            }
+        }
+
+        stage('Unit Tests') {
+            nodeEnv.inside {
+                sh 'npm run test:coverage'
+            }
+        }
+
+        stage('Integration Tests') {
+            try {
+                checkout scm
+                sh './dependencies/start.sh'
+                sh 'docker-compose up --build -d'
+                sh 'SUT_URL=http://users-api:3060 COMPOSE_NAME=usersapi ./test/integration/run.sh'
+            } finally {
+                sh 'docker-compose down'
+                sh './dependencies/stop.sh'
+            }
+        }
+
+        if (git.onBranch("develop") || git.onBranch("master")) {
+            stage('NPM Publish') {
+                def version
+                def name
+                nodeEnv.inside {
+                    npm.setContext(this)
+                    version = npm.getPackageVersion()
+                    name = npm.getPackageName()
+                }
+                if (!git.tagExists(version)) {
+                    try {
+                        git.createTag(version)
+                        nodeEnv.inside {
+                            npm.setContext(this)
+                            npm.publish()
+                        }
+                    } catch (e) {
+                        git.deleteTag(version)
+                        println "Failed to publish ${name}:${version}"
+                        throw e
+                    }
+                } else {
+                    println "Nothing to publish"
+                }
+            }
+        }
+
+        currentBuild.result = 'SUCCESS'
+    } catch (Exception e) {
+        currentBuild.result = 'FAILURE'
+    } finally {
+        stage('update Gitlab') {
+            gitLabNotifyer.notifyGitlab(gitLabNotifyer.gitlabFinalBuildStatus(currentBuild))
+        }
+
+        if (env.BRANCH_NAME == 'master' && gitLabNotifyer.buildChangeStatus(currentBuild) != null) {
+            stage('send notification') {
+                slackBuildNotifier.notify(this, '#scv-dev', gitLabNotifyer.buildChangeStatus(currentBuild))
+            }
+        }
+
+        stage('Cleanup') {
+            deleteDir()
+        }
+    }
+
+}

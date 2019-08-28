@@ -1,0 +1,24 @@
+{
+	"responseTimeout": 30000,
+	"port": 3060,
+	"environment": "development",
+	"database": {
+		"connection": {
+			"name": "",
+			"schema": "",
+			"hostname": "",
+			"port": "",
+			"username": "",
+			"password": ""
+		},
+		"options": {
+			"maxPoolSize": 100,
+			"connectTimeout": 30,
+			"autoCleanIdle": true,
+			"idleTimeout": 30000
+		}
+	},
+	"logging": {
+		"level": "debug"
+	}
+}

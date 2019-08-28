@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Component it matches the snapshot 1`] = `
+<div
+  className="styles__Row-sc-18xwbcb-3 iYGMAK"
+>
+  <h3>
+    Search By Employee Number
+  </h3>
+  <div
+    className="styles__FormDiv-sc-18xwbcb-11 rkpVF"
+  >
+    <div
+      className="styles__Row-sc-18xwbcb-3 iYGMAK"
+    >
+      <div
+        className="styles__Col-sc-18xwbcb-2 iXgqsR"
+      >
+        <label>
+          Number 
+        </label>
+      </div>
+      <div
+        className="styles__Col-sc-18xwbcb-2 iXgqsR"
+      >
+        <input
+          className="styles__Input-sc-18xwbcb-13 dbSdma"
+          id="employeeId"
+          name="employeeId"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="styles__Row-sc-18xwbcb-3 iYGMAK"
+    >
+      <div
+        className="styles__Col-sc-18xwbcb-2 jTVgQF"
+      >
+        <a
+          href="/view/"
+          id="viewEmployee"
+          onClick={[Function]}
+        >
+          <div
+            className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+          >
+            View 
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

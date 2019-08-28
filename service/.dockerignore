@@ -1,0 +1,8 @@
+node_modules
+test
+dependencies
+.editorconfig
+.eslintrc.json
+.gitignore
+Dockerfile
+Jenkinsfile

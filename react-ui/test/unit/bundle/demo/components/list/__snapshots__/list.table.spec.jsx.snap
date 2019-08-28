@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Component it matches the snapshot 1`] = `
+<div
+  className="styles__Row-sc-18xwbcb-3 cYIdhM"
+>
+  <div
+    className="styles__Col-sc-18xwbcb-2 eBtAHL"
+  >
+    <div
+      className="styles__NameLabel-sc-18xwbcb-5 dErOaa"
+    >
+      N
+      S
+    </div>
+  </div>
+  <div
+    className="styles__Col-sc-18xwbcb-2 jTVgQF"
+  >
+    <div>
+      <b>
+        Niku Sharma
+      </b>
+    </div>
+    <div>
+      007
+    </div>
+    <div>
+      7@thesimpsons.com
+    </div>
+  </div>
+  <div
+    className="styles__Col-sc-18xwbcb-2 gAVkdx"
+  >
+    <a
+      href="/view/7"
+      onClick={[Function]}
+    >
+      <div
+        className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+      >
+        View
+      </div>
+       
+    </a>
+  </div>
+</div>
+`;

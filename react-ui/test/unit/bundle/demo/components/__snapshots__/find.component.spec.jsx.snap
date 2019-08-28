@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Find Component it matches the snapshot 1`] = `
+<div
+  className="styles__Row-sc-18xwbcb-3 iYGMAK"
+>
+  <div
+    className="styles__Col-sc-18xwbcb-2 iXgqsR"
+  >
+    <div
+      className="styles__FormDiv-sc-18xwbcb-11 rkpVF"
+    >
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        >
+          <label>
+            Employee Number
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        />
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        >
+           
+          <label>
+            Name
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        >
+          undefined undefined
+        </div>
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        >
+          <label>
+            Email
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        />
+      </div>
+      <div
+        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      >
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        >
+          <label>
+            Mobile
+          </label>
+        </div>
+        <div
+          className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        />
+      </div>
+    </div>
+    <div
+      className="styles__Row-sc-18xwbcb-3 iYGMAK"
+    >
+      <div
+        className="styles__Col-sc-18xwbcb-2 jTVgQF"
+      >
+        <button
+          className="styles__ButtonDanger-sc-18xwbcb-10 iOBdwr"
+          id="deleteUser"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Delete
+        </button>
+      </div>
+      <div
+        className="styles__Col-sc-18xwbcb-2 gAVkdx"
+      >
+        <a
+          href="/list"
+        >
+          <div
+            className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+          >
+            Back
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

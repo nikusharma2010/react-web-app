@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationBar Component it matches the snapshot 1`] = `
+<div
+  className="styles__Row-sc-18xwbcb-3 cYIdhM"
+>
+  <div
+    className="styles__Col-sc-18xwbcb-2 jTVgQF"
+  >
+    <a
+      href="/add"
+    >
+      <div
+        className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+      >
+        Add User
+      </div>
+    </a>
+  </div>
+  <div
+    className="styles__Col-sc-18xwbcb-2 eBtAHL"
+  >
+    <a
+      href="/Search"
+    >
+      <div
+        className="styles__Button-sc-18xwbcb-6 styles__ButtonInfo-sc-18xwbcb-9 hUVWEa"
+      >
+        Search User
+      </div>
+    </a>
+  </div>
+  <div
+    className="styles__Col-sc-18xwbcb-2 gAVkdx"
+  >
+    <a
+      href="/list"
+    >
+      <div
+        className="styles__Button-sc-18xwbcb-6 styles__ButtonSuccess-sc-18xwbcb-8 dOgvkn"
+      >
+        Users
+      </div>
+    </a>
+  </div>
+</div>
+`;

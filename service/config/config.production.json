@@ -1,0 +1,23 @@
+{
+	"environment": "%%resource.tree.env.folder.name%%",
+	"database": {
+		"connection": {
+			"name": "&&DATABASE&&",
+			"schema": "&&SCHEMA&&",
+			"hostname": "&&HOSTNAME&&",
+			"port": "&&SSL_PORT&&",
+			"username": "&&USERNAME&&",
+			"password": "&&PASSWORD&&",
+			"sslClientKeystoredb": "%%SSL_CLIENT_KEY_DB%%",
+			"sslClientKeystoreDBPassword": "%%SSL_CLIENT_KEY_PASS%%",
+			"sslClientLabel": "%%SSL_CLIENT_LABEL%%",
+			"authentication": "%%AUTHENTICATION%%"
+		},
+		"options": {
+			"maxPoolSize": "&&MAX_POOL_SIZE&&",
+			"connectTimeout": 30,
+			"autoCleanIdle": true,
+			"idleTimeout": 30000
+		}
+	}
+}
