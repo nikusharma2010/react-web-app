@@ -5,11 +5,13 @@ describe('users routes', () => {
     this.use = td.function();
 
     this.handlers = {
-      users: { find: td.function(),
+      users: {
+        find: td.function(),
         findById: td.function(),
         deleteUserById: td.function(),
         createUserById: td.function(),
-        updateUserById: td.function() }
+        updateUserById: td.function()
+      }
     };
 
     this.Router = td.constructor(['get', 'delete', 'post', 'put', 'routes', 'allowedMethods']);
@@ -17,8 +19,7 @@ describe('users routes', () => {
     td.replace('koa-router', this.Router);
     td.replace('../../../src/users/handlers/handler.js', this.handlers.users);
 
-    this.sut = require('../../../src/routes');
-    this.sut.setup({ use: this.use });
+    this.sut = require('../../../src/users/routes');
   });
 
   afterEach(td.reset);
@@ -37,13 +38,5 @@ describe('users routes', () => {
   });
   it('should setup update user by id route', () => {
     td.verify(this.Router.prototype.put('/user/:id', this.handlers.users.updateUserById));
-  });
-
-  it('should use defined routes', () => {
-    td.verify(this.use(this.Router.prototype.routes()));
-  });
-
-  it('should use allowed methods', () => {
-    td.verify(this.use(this.Router.prototype.allowedMethods()));
   });
 });

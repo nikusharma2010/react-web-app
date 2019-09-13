@@ -2,19 +2,19 @@
   "name": "users-api",
   "version": "1.1.0",
   "description": "",
-  "main": "users/routes.js",
+  "main": "src/app/server.js",
   "scripts": {
-    "start": "docker-compose up --build  --force-recreate",
-    "start:server": "node app/server.js",
+    "start": "docker-compose -f docker-compose.yml up --build",
+    "start:server": "node src/app/server.js",
     "stop": "docker-compose down --remove-orphans -v",
     "start:dev": "docker-compose -f docker-compose.dev.yml up --build",
-    "dev": "nodemon --watch './**/*' app/server.js",
+    "dev": "nodemon --watch './**/*' src/app/server.js",
     "test": "npm run lint && npm run test:coverage",
-    "lint": "eslint 'app/**/*.js' 'src/**/*.js' 'test/**/*.js'",
+    "lint": "eslint 'src/app/**/*.js' 'src/**/*.js' 'test/**/*.js'",
     "lint:fix": "npm run lint -- --fix",
     "test:unit": "mocha './test/unit/**/*.spec.js'",
     "test:coverage": "nyc npm run test:unit",
-    "test:integration": "SUT_URL=http://localhost:3070 mocha -t 20000 -s 5000 './test/integration/run.test.js' --timeout 200000 --reporter mochawesome"
+    "test:integration": "SUT_URL=http://localhost:3070 mocha './test/integration/run.test.js' --reporter mochawesome --exit"
   },
   "husky": {
     "hooks": {
@@ -24,8 +24,6 @@
   "author": "Niku",
   "license": "UNLICENSED",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-as-promised": "^7.1.1",
     "eslint": "^5.5.0",
     "eslint-config-prettier": "^3.5.0",
     "eslint-config-semistandard": "^12.0.1",
@@ -45,10 +43,9 @@
     "nyc": "^14.1.1",
     "prettier": "^1.15.3",
     "supertest": "^4.0.2",
-    "testdouble": "^3.8.1"
+    "testdouble": "^3.12.4"
   },
   "dependencies": {
-    "bluebird": "^3.5.2",
     "koa": "^2.5.2",
     "koa-bodyparser": "^4.2.1",
     "koa-compress": "^3.0.0",

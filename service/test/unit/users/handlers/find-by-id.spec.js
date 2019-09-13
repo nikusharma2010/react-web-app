@@ -4,12 +4,14 @@ const NoUserError = require('../../../../src/error/NoUserFoundError');
 const errorMock = new NoUserError();
 
 const mockUsers = [{
+  id: '1',
   firstName: 'Niku',
   lastName: 'Sharma',
   email: 'homer@thesimpsons.com',
   mobile: '001'
 }];
 const returnUsers = [{
+  id: '1',
   firstName: 'Niku',
   lastName: 'Sharma',
   email: 'homer@thesimpsons.com',

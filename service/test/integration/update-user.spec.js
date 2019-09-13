@@ -1,5 +1,4 @@
-const request = require('supertest');
-const server = require('../../app/server');
+const request = require('supertest')(process.env.SUT_URL);
 const assert = require('assert');
 
 const mockUser = {
@@ -12,7 +11,7 @@ const mockUser = {
 
 describe('PUT /user/7', () => {
   it('user created successfully', (done) => {
-    request(server)
+    request
       .put('/user/7')
       .send(mockUser)
       .set('Content-Type', 'application/json')
@@ -24,13 +23,13 @@ describe('PUT /user/7', () => {
       });
   });
   it('responds with error - code 422', (done) => {
-    request(server)
+    request
       .get('/user/9')
       .set('Content-Type', 'application/json')
       .expect(422, done);
   });
   it('responds with error', (done) => {
-    request(server)
+    request
       .get('/user/9')
       .set('Content-Type', 'application/json')
       .expect(422)

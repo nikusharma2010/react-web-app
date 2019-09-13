@@ -1,10 +1,9 @@
-const request = require('supertest');
-const server = require('../../app/server');
+const request = require('supertest')(process.env.SUT_URL);
 const assert = require('assert');
 
 describe('REMOVE /user/7', () => {
   it('user deleted successfully', (done) => {
-    request(server)
+    request
       .delete('/user/7')
       .set('Content-Type', 'application/json')
       .expect(200)
@@ -15,13 +14,13 @@ describe('REMOVE /user/7', () => {
       });
   });
   it('responds with error - code 422', (done) => {
-    request(server)
+    request
       .get('/user/9')
       .set('Content-Type', 'application/json')
       .expect(422, done);
   });
   it('responds with error', (done) => {
-    request(server)
+    request
       .get('/user/9')
       .set('Content-Type', 'application/json')
       .expect(422)

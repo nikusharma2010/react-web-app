@@ -1,6 +1,8 @@
 const assert = require('assert');
 const td = require('testdouble');
+const InvalidInputError = require('../../../../src/error/InvalidInputError');
 const mockUser = {
+  id: '1',
   firstName: 'Niku',
   lastName: 'Sharma',
   email: 'homer@thesimpsons.com',
@@ -13,7 +15,7 @@ describe('Create user', () => {
     return sut(ctx);
   };
   describe('if successfull ', () => {
-    beforeEach(() => {});
+    beforeEach(() => { });
     afterEach(() => {
       td.reset();
     });
@@ -35,7 +37,7 @@ describe('Create user', () => {
     });
   });
   describe('if unsuccessfull ', () => {
-    beforeEach(() => {});
+    beforeEach(() => { });
     afterEach(() => {
       td.reset();
     });
@@ -54,6 +56,103 @@ describe('Create user', () => {
         }
       };
       assert.deepStrictEqual(await execute(ctx), false);
+    });
+  });
+  describe('validation checks  ', () => {
+    it('should throw error user missing', async () => {
+      const ctx = {
+        req: {
+          dbConnect: {
+            query: (a, b) => ({
+              affectedRows: 1
+            })
+          }
+        },
+        request: {
+          body: undefined
+        }
+      };
+
+      try {
+        await execute(ctx);
+      } catch (error) {
+        assert.deepStrictEqual(error, new InvalidInputError('Invalid Emlpyee Details', 422));
+      }
+    });
+    it('should throw error id missing ', async () => {
+      const ctx = {
+        req: {
+          dbConnect: {
+            query: (a, b) => ({
+              affectedRows: 1
+            })
+          }
+        },
+        request: {
+          body: {
+            firstName: 'Niku',
+            lastName: 'Sharma',
+            email: 'homer@thesimpsons.com',
+            mobile: '001'
+          }
+        }
+      };
+
+      try {
+        await execute(ctx);
+      } catch (error) {
+        assert.deepStrictEqual(error, new InvalidInputError('Invalid Emlpyee Id', 422));
+      }
+    });
+    it('should throw error first name missing ', async () => {
+      const ctx = {
+        req: {
+          dbConnect: {
+            query: (a, b) => ({
+              affectedRows: 1
+            })
+          }
+        },
+        request: {
+          body: {
+            id: 1,
+            lastName: 'Sharma',
+            email: 'homer@thesimpsons.com',
+            mobile: '001'
+          }
+        }
+      };
+
+      try {
+        await execute(ctx);
+      } catch (error) {
+        assert.deepStrictEqual(error, new InvalidInputError('Invalid Emlpyee firstName', 422));
+      }
+    });
+    it('should throw error id missing ', async () => {
+      const ctx = {
+        req: {
+          dbConnect: {
+            query: (a, b) => ({
+              affectedRows: 1
+            })
+          }
+        },
+        request: {
+          body: {
+            id: 1,
+            firstName: 'Niku',
+            email: 'homer@thesimpsons.com',
+            mobile: '001'
+          }
+        }
+      };
+
+      try {
+        await execute(ctx);
+      } catch (error) {
+        assert.deepStrictEqual(error, new InvalidInputError('Invalid Emlpyee lastName', 422));
+      }
     });
   });
   // describe('when error occured', async () => {

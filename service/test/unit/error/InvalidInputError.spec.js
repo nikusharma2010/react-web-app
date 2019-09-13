@@ -1,7 +1,7 @@
 const assert = require('assert');
-const Sut = require('../../../src/error/NoUserFoundError');
+const Sut = require('../../../src/error/InvalidInputError');
 
-describe('NoUserFoundError ', () => {
+describe('InvalidInputError ', () => {
   describe('with default properties', () => {
     it('should throw correctly', () => {
       assert.throws(() => {
@@ -18,7 +18,7 @@ describe('NoUserFoundError ', () => {
     });
     it('should set default message', () => {
       assert.throws(() => { throw new Sut(); },
-        err => err.message === 'No such user found, check user again !!!');
+        err => err.message === 'Missing Mandatory Fields');
     });
     it('should display custome error code and messages', () => {
       assert.throws(() => { throw new Sut('Test Message', 500); },

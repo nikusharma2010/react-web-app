@@ -1,22 +1,20 @@
-const request = require('supertest');
-const server = require('../../app/server');
+const request = require('supertest')(process.env.SUT_URL);
 const assert = require('assert');
-// const URL = process.env.SUT_URL;
 
 describe('GET /users', () => {
   it('responds with content-type - json', (done) => {
-    request(server)
+    request
       .get('/users')
       .expect('Content-Type', /json/, done);
   });
   it('responds with status - 200', (done) => {
-    request(server)
+    request
       .get('/users')
       .set('Content-Type', 'application/json')
       .expect(200, done);
   });
   it('responds with users - at least one user retured', (done) => {
-    request(server)
+    request
       .get('/users')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)

@@ -1,9 +1,9 @@
 const pool = require('./db-connection');
 
-const connectDB = (req, resp, next) => {
+const connectDB = async (req, resp, next) => {
   console.log('------- GET DB CONNECTION ----------');
   req.dbConnect = pool;
-  next();
+  await next();
 };
 
 module.exports = connectDB;

@@ -3,6 +3,7 @@ const errorHandler = async (ctx, next) => {
   try {
     await next();
   } catch (e) {
+    console.error(e);
     const statusCode = e.statusCode || 500;
     const message = e.message || 'A System Error Occured';
     ctx.response.status = statusCode;
