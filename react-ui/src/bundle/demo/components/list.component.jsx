@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { getUsers } from '../middleware/actions';
 import ListTable from './list/list.table';
 import { PropTypes } from 'prop-types';
-import { CardBody } from '../../common/styles';
 import Notification from './notification.component';
 import Spinner from './spinner.component';
+
 @connect((state) => {
     return {
         users: state.userState.users,
@@ -43,9 +43,7 @@ class ListComponent extends React.Component {
         }
 
         return (
-            <CardBody>
-                <ListTable usersList={this.state.userList} />
-            </CardBody>
+            <ListTable usersList={this.state.userList} />
         );
     }
 }

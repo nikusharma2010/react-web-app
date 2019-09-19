@@ -21,10 +21,12 @@ class ListTableRow extends React.Component {
                     </NameLabel>
 
                 </Col>
-                <Col textAlign="left">
+                <Col textAlign="left" col="2">
+
                     <div><b>{user.firstName + ' ' + user.lastName}</b></div>
                     <div>{user.mobile}</div>
                     <div>{user.email}</div>
+
                 </Col>
                 <Col textAlign="right"><Link to={`/view/${this.props.user.id}`}><ButtonPrimary>View</ButtonPrimary> </Link></Col>
             </Row>
