@@ -21,7 +21,7 @@ class ListTableRow extends React.Component {
                     </NameLabel>
 
                 </Col>
-                <Col textAlign="left" col="2">
+                <Col col="2">
 
                     <div><b>{user.firstName + ' ' + user.lastName}</b></div>
                     <div>{user.mobile}</div>

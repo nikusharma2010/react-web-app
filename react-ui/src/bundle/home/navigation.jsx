@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, ButtonPrimary, ButtonSuccess, ButtonInfo } from '../common/styles';
+import { Link } from 'react-router-dom';
 
 export default class NavigationBar extends React.Component {
     constructor(props) {
@@ -9,20 +10,20 @@ export default class NavigationBar extends React.Component {
         return (
 
             <Row bottomBorder="true">
-                <Col textAlign="left">
-                    <a href="/add">
+                <Col>
+                    <Link to="/add">
                         <ButtonPrimary>Add User</ButtonPrimary>
-                    </a>
+                    </Link>
                 </Col>
                 <Col textAlign="center">
-                    <a href="/Search">
+                    <Link to="/Search">
                         <ButtonInfo>Search User</ButtonInfo>
-                    </a>
+                    </Link>
                 </Col>
                 <Col textAlign="right">
-                    <a href="/list">
+                    <Link to="/list">
                         <ButtonSuccess>Users</ButtonSuccess>
-                    </a>
+                    </Link>
                 </Col>
             </Row>
         );

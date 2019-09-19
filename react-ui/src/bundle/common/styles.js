@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     /* width: 100%; */
-    margin-right: -8px;
-    margin-left: -8px;
+    margin-right: -5px;
+    margin-left: -5px;
     `;
 
 export const Col = styled.div`
@@ -11,18 +11,16 @@ export const Col = styled.div`
     flex-direction: column;
     flex-basis: 100%;
     flex: ${props => props.col ? props.col : 1};
-    width: auto;
+    width: 100%;
     text-align: ${props => props.textAlign};
     `;
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-right: 5px;
-    padding-left: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    width: auto;
+    width: 100%;
     align-items:center;
     border-bottom: ${props => !props.bottomBorder ? " " : "1px solid"};
     `;
@@ -51,6 +49,7 @@ export const Button = styled.div`
     line-height: 1.5;
     border-radius: 0.25rem;
     background-color: #286090;
+    text-align: center;
     `;
 
 export const ButtonPrimary = styled(Button)`
@@ -75,8 +74,16 @@ export const FormDiv = styled.div`
     line-height: 1.5;
     background-color: #ebf1f7;
     `;
-export const SubmitButton = styled(Button)`
+export const SubmitButton = styled.button`
     background-color: #012d65;
+    display: inline-block;
+    font-weight: 500;
+    color: #ffffff;
+    border: 1px solid transparent;
+    padding: 10px 10px;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-align: center;
     `;
 export const Input = styled.input`
     padding: 0.5em;

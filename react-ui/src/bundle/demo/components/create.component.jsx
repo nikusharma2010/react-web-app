@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { createUser } from '../middleware/actions';
 import Notification from './notification.component';
 import { Col, Row, SubmitButton, ButtonPrimary, FormDiv, Input } from '../../common/styles';
+import { Link } from 'react-router-dom';
+
 /** Make the Component smar and access all features from store from Provider***/
 @connect((state) => {
     return {
@@ -36,7 +38,7 @@ class CreateComponent extends React.Component {
 	    user.email = event.target.email.value;
 	    this.props.dispatch(createUser(user));
 	    //if (this.state.error == null && this.state.error.trim().length === 0) {
-	        this.setState({ confirmation: true });
+	    this.setState({ confirmation: true });
 	    //}
 
 	    event.preventDefault();
@@ -53,9 +55,15 @@ class CreateComponent extends React.Component {
 	            {(this.state.error != null && this.state.error.trim().length > 0) &&
 					<Notification message={this.state.error} />
 	            }
-	            <h3>Create a New Employee record</h3>
+	            <Row>
+	                <Col>
+	                    <Link to='/list'><ButtonPrimary>Back</ButtonPrimary></Link>
+	                </Col>
+	            </Row>
+
 	            <FormDiv>
 	                <form onSubmit={this.handleSubmit}>
+	                    <div><h3>Create a New Employee record</h3></div>
 	                    <Row>
 	                        <Col><label>Employee Number</label></Col>
 	                        <Col><Input type="text" id="employeeId" name="employeeId" /></Col>
@@ -77,9 +85,6 @@ class CreateComponent extends React.Component {
 	                        <Col><Input type="text" id="email" name="email" /></Col>
 	                    </Row>
 	                    <Row>
-	                        <Col>
-	                            <a href='/list'><ButtonPrimary>Back</ButtonPrimary></a>
-	                        </Col>
 	                        <Col>
 	                            <SubmitButton style={!this.state.confirmation ? {} : { display: 'none' }}>Add User</SubmitButton>
 	                        </Col>

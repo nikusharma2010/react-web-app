@@ -28,7 +28,7 @@ class SearchComponent extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col textAlign="left">
+                        <Col>
                             <Link id="viewEmployee" to={`/view/${this.state.employeeId}`}>
                                 <ButtonPrimary>View </ButtonPrimary></Link>
                         </Col>

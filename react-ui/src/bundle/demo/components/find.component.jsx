@@ -5,6 +5,8 @@ import Notification from './notification.component';
 import { PropTypes } from 'prop-types';
 import { Col, Row, ButtonPrimary, ButtonDanger, FormDiv } from '../../common/styles';
 import Spinner from './spinner.component';
+import { Link } from 'react-router-dom';
+
 /** Make the Component smar and access all features from store from Provider***/
 @connect((state) => {
     return {
@@ -54,48 +56,49 @@ class FindComponent extends React.Component {
 	        return <Notification message={this.state.error} />;
 	    }
 	    return (
-
 	        <Row>
-	            <Col>
-	                <FormDiv>
+	            <Row>
+	                <Col>
+	                    <Link to='/list'><ButtonPrimary>Back</ButtonPrimary></Link>
+	                </Col>
+	            </Row>
+	            <Row>
+	                <Col>
+	                    <FormDiv>
+	                        <Row>
+	                            <Col ><label>Employee Number</label></Col>
+	                            <Col >
+	                                {user.id}
+	                            </Col>
+	                        </Row>
+	                        <Row>
+	                            <Col > <label>Name</label></Col>
+	                            <Col >
+	                                {user.firstName + ' ' + user.lastName}
+	                            </Col>
+	                        </Row>
+
+	                        <Row>
+	                            <Col ><label >Email</label></Col>
+	                            <Col >
+	                                {user.email}
+	                            </Col>
+	                        </Row>
+	                        <Row>
+	                            <Col ><label >Mobile</label></Col>
+	                            <Col >
+	                                {user.mobile}
+	                            </Col>
+	                        </Row>
+	                    </FormDiv>
 	                    <Row>
-	                        <Col textAlign="left"><label>Employee Number</label></Col>
-	                        <Col textAlign="left">
-	                            {user.id}
-	                        </Col>
-	                    </Row>
-	                    <Row>
-	                        <Col textAlign="left"> <label>Name</label></Col>
-	                        <Col textAlign="left">
-	                            {user.firstName + ' ' + user.lastName}
+	                        <Col >
+	                            <ButtonDanger id="deleteUser" onClick={this.deleteUser} style={!deleted ? {} : { display: 'none' }}>Delete</ButtonDanger>
 	                        </Col>
 	                    </Row>
 
-	                    <Row>
-	                        <Col textAlign="left"><label >Email</label></Col>
-	                        <Col textAlign="left">
-	                            {user.email}
-	                        </Col>
-	                    </Row>
-	                    <Row>
-	                        <Col textAlign="left"><label >Mobile</label></Col>
-	                        <Col textAlign="left">
-	                            {user.mobile}
-	                        </Col>
-	                    </Row>
-	                </FormDiv>
-	                <Row>
-	                    <Col textAlign="left">
-	                        <ButtonDanger id="deleteUser" onClick={this.deleteUser} style={!deleted ? {} : { display: 'none' }}>Delete</ButtonDanger>
-	                    </Col>
-	                    <Col textAlign="right">
-	                        <a href='/list'>
-	                            <ButtonPrimary>Back</ButtonPrimary>
-	                        </a>
-	                    </Col>
-	                </Row>
-
-	            </Col>
+	                </Col>
+	            </Row >
 	        </Row >
 
 	    );
@@ -103,6 +106,7 @@ class FindComponent extends React.Component {
 }
 FindComponent.propTypes = {
     match: PropTypes.object.isRequired,
+    user: PropTypes.object,
     isLoading: PropTypes.bool,
     error: PropTypes.string,
     dispatch: PropTypes.func,
