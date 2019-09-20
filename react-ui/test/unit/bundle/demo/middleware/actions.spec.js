@@ -1,30 +1,50 @@
 
 import { getUsers, getUser, createUser, removeUser } from '../../../../../src/bundle/demo/middleware/actions';
-import * as actions from '../../../../../src/bundle/demo/middleware/constants';
+import * as actions from '../../../../../src/bundle/demo/middleware/action-types';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import fetchMock from 'fetch-mock';
+import moxios from 'moxios';
 import expect from 'expect';
 import * as Mock from '../data/data';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const API_URL = 'http://localhost:3070';
 
 describe('user list action ', () => {
-    afterEach(() => {
-        fetchMock.restore();
+    const users = [{
+        id: '1',
+        firstName: 'James',
+        lastName: 'Bond',
+        email: 'marge@thesimpsons.com',
+        mobile: '002001234567890'
+    },
+    {
+        id: '2',
+        firstName: 'Simon',
+        lastName: 'Smith',
+        email: 'maggie@thesimpsons.com',
+        mobile: '003001234567890'
+    }];
+
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
     });
 
     it('creates RECEIVE_USERS when fetching users has been done', () => {
-        fetchMock.getOnce(API_URL + '/users', {
-            body: { users: [] },
-            status: 200,
-            headers: { 'content-type': 'application/json' }
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.respondWith({
+                status: 200,
+                response: { users: users },
+            });
         });
 
         const expectedActions = [
-            { type: actions.REQUEST_USERS }, { users: [], type: actions.RECEIVE_USERS }
+            { type: actions.REQUEST_USERS }, { users: users, type: actions.RECEIVE_USERS }
         ];
         const store = mockStore({ users: [] });
 
@@ -35,18 +55,32 @@ describe('user list action ', () => {
 });
 
 describe('user get action ', () => {
-    afterEach(() => {
-        fetchMock.restore();
+    const user = {
+        id: '1',
+        firstName: 'James',
+        lastName: 'Bond',
+        email: 'marge@thesimpsons.com',
+        mobile: '002001234567890'
+    };
+
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
     });
 
     it('creates RECEIVE_USER when fetching user has been done', () => {
-        fetchMock.getOnce(API_URL + '/user/1', {
-            body: { user: {} },
-            headers: { 'content-type': 'application/json' }
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.respondWith({
+                status: 200,
+                response: { user: user },
+            });
         });
-
         const expectedActions =
-            [{ type: actions.REQUEST_USER }, { type: actions.RECEIVE_USER, "user": {} }]
+            [{ type: actions.REQUEST_USER }, { type: actions.RECEIVE_USER, user: user }]
             ;
         const store = mockStore({ user: {} });
 
@@ -55,62 +89,89 @@ describe('user get action ', () => {
         });
     });
 });
+
 describe('create user action ', () => {
-    afterEach(() => {
-        fetchMock.restore();
+    const user = {
+        id: '1',
+        firstName: 'James',
+        lastName: 'Bond',
+        email: 'marge@thesimpsons.com',
+        mobile: '002001234567890'
+    };
+
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
     });
 
     it('creates user when post user has been done', () => {
-        fetchMock.post(API_URL + '/user', {
-            method: 'POST',
-            body: { user: {} },
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.respondWith({
+                status: 200
+            });
         });
 
         const expectedActions =
             [{ type: actions.REQUEST_USER_ADD }, { type: actions.RECEIVE_USER_ADD }];
         const store = mockStore({ user: {} });
-        const user = {};
 
         return store.dispatch(createUser(user)).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
 });
+
 describe('create user action failure', () => {
-    afterEach(() => {
-        fetchMock.restore();
+    const user = Mock.userMock;
+    const errorResp = {
+        status: 422,
+        response: { data: { message: 'Error Code - 422 - Test' } }
+    };
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
     });
 
     it('creates user when post user has been done', () => {
-        fetchMock.post(API_URL + '/user', {
-            body: { message: 'Test', statusCode: 422 },
-            status: 422
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.reject(errorResp);
         });
 
         const expectedActions =
             [{ type: actions.REQUEST_USER_ADD }, { type: actions.RECEIVE_FAILURE, error: 'Error Code - 422 - Test' }];
         const store = mockStore({ user: Mock.userMock });
-        const user = Mock.userMock;
 
         return store.dispatch(createUser(user)).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
 });
+
 describe('delete user action ', () => {
-    afterEach(() => {
-        fetchMock.restore();
+    const user = Mock.userMock;
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
     });
 
     it('delete user when fetch user has been done', () => {
-        fetchMock.delete(API_URL + '/user/1', {
-
-            method: 'DELETE',
-            body: {}
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.respondWith({
+                status: 200,
+                response: { user: user },
+            });
         });
 
         const expectedActions =
@@ -122,17 +183,25 @@ describe('delete user action ', () => {
         });
     });
 });
+
 describe('error action  for users', () => {
-    afterEach(() => {
-        fetchMock.restore();
+    const errorResp = {
+        status: 422,
+        response: { data: { message: 'Unprocessable Entity' } }
+    };
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
     });
 
     it('creates RECEIVE_USERS when fetching users has been done', () => {
-        fetchMock.getOnce(API_URL + '/users', {
-            body: { message: 'Test', statusCode: 422 },
-            status: 422
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.reject(errorResp);
         });
-
         const expectedActions = [
             { type: actions.REQUEST_USERS }, { type: actions.RECEIVE_FAILURE, error: 'Unprocessable Entity' }
         ];
@@ -143,24 +212,59 @@ describe('error action  for users', () => {
         });
     });
 });
+
 describe('error action for user', () => {
-    afterEach(() => {
-        fetchMock.restore();
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
     });
 
     it('creates RECEIVE_USER when fetching users has been done', () => {
-        fetchMock.getOnce(API_URL + '/user/1', {
-            body: { message: 'Test', statusCode: 422 },
+        const errorResp = {
             status: 422,
-            headers: { 'content-type': 'application/json' }
+            response: { data: { message: 'Error Code - 422 - Test' } }
+        };
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.reject(errorResp);
         });
-
         const expectedActions = [
             { type: actions.REQUEST_USER }, { type: actions.RECEIVE_FAILURE, error: 'Error Code - 422 - Test' }
         ];
         const store = mockStore(Mock.userMock);
 
         return store.dispatch(getUser('1')).then(() => {
+            expect(store.getActions()).toEqual(expectedActions);
+        });
+    });
+});
+describe('error action for user delete', () => {
+    beforeEach(() => {
+        moxios.install();
+    });
+
+    afterEach(function () {
+        moxios.uninstall();
+    });
+
+    it('creates REQUEST_USER_DELETE when fetching users has been done', () => {
+        const errorResp = {
+            status: 422,
+            response: { data: { message: 'Error Code - 422' } }
+        };
+        moxios.wait(() => {
+            const request = moxios.requests.mostRecent();
+            request.reject(errorResp);
+        });
+        const expectedActions = [
+            { type: actions.REQUEST_USER_DELETE }, { type: actions.RECEIVE_FAILURE, error: 'Error Code - 422' }
+        ];
+        const store = mockStore(Mock.userMock);
+
+        return store.dispatch(removeUser('1')).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });

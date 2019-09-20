@@ -88,15 +88,16 @@ export const SubmitButton = styled.button`
 export const Input = styled.input`
     padding: 0.5em;
     margin: 0.5em;
-    background: #d8d5d0;
+    background: #bdbdbd;
     border: none;
     border-radius: 3px;
-    width: 70%;
+    width: auto;
+    height: 25px;
 `;
 
 export const Alert = styled.div`
     border-radius: 0.25rem;
     width: 100%;
     padding: 20px;
-    background-color: #5bc0de
+    background-color: #5bc0de;
 `;

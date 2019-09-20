@@ -1,4 +1,4 @@
-import * as types from '../../../../../src/bundle/demo/middleware/constants';
+import * as types from '../../../../../src/bundle/demo/middleware/action-types';
 import userReducer from '../../../../../src/bundle/demo/middleware/reducer';
 import * as Mock from '../data/data';
 
@@ -12,7 +12,7 @@ describe('userReducer reducer', () => {
                 type: types.REQUEST_USERS
             })
         ).toEqual(
-            { isLoading: true }
+            { isLoading: true, error: '' }
         );
     });
     it('should handle RECEIVE_FAILURE', () => {
@@ -47,7 +47,7 @@ describe('userReducer reducer', () => {
                 isLoading: false
             })
         ).toEqual(
-            { isLoading: true }
+            { isLoading: true, error: '' }
         );
     });
     it('should handle RECEIVE_USER', () => {
@@ -70,7 +70,7 @@ describe('userReducer reducer', () => {
                 type: types.REQUEST_USER_ADD
             })
         ).toEqual(
-            {}
+            { error: '' }
         );
     });
     it('should handle RECEIVE_USER_ADD', () => {
@@ -91,7 +91,7 @@ describe('userReducer reducer', () => {
                 type: types.REQUEST_USER_DELETE
             })
         ).toEqual(
-            {}
+            { error: '' }
         );
     });
     it('should handle RECEIVE_USER_DELETE', () => {

@@ -2,20 +2,20 @@
 
 exports[`List Component it matches the snapshot 1`] = `
 <div
-  className="styles__Row-sc-18xwbcb-3 cYIdhM"
+  className="styles__Row-sc-18xwbcb-2 eCIkQt"
 >
   <div
-    className="styles__Col-sc-18xwbcb-2 eBtAHL"
+    className="styles__Col-sc-18xwbcb-1 FOjru"
   >
     <div
-      className="styles__NameLabel-sc-18xwbcb-5 dErOaa"
+      className="styles__NameLabel-sc-18xwbcb-4 eFarEQ"
     >
       N
       S
     </div>
   </div>
   <div
-    className="styles__Col-sc-18xwbcb-2 jTVgQF"
+    className="styles__Col-sc-18xwbcb-1 eqLmFH"
   >
     <div>
       <b>
@@ -30,14 +30,14 @@ exports[`List Component it matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="styles__Col-sc-18xwbcb-2 gAVkdx"
+    className="styles__Col-sc-18xwbcb-1 bLiUMj"
   >
     <a
       href="/view/7"
       onClick={[Function]}
     >
       <div
-        className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+        className="styles__Button-sc-18xwbcb-5 styles__ButtonPrimary-sc-18xwbcb-6 YFSZa"
       >
         View
       </div>

@@ -2,29 +2,29 @@
 
 exports[`Search Component it matches the snapshot 1`] = `
 <div
-  className="styles__Row-sc-18xwbcb-3 iYGMAK"
+  className="styles__Row-sc-18xwbcb-2 MjgCm"
 >
   <h3>
     Search By Employee Number
   </h3>
   <div
-    className="styles__FormDiv-sc-18xwbcb-11 rkpVF"
+    className="styles__FormDiv-sc-18xwbcb-10 hMsRmX"
   >
     <div
-      className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      className="styles__Row-sc-18xwbcb-2 MjgCm"
     >
       <div
-        className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        className="styles__Col-sc-18xwbcb-1 cOYgjR"
       >
         <label>
           Number 
         </label>
       </div>
       <div
-        className="styles__Col-sc-18xwbcb-2 iXgqsR"
+        className="styles__Col-sc-18xwbcb-1 cOYgjR"
       >
         <input
-          className="styles__Input-sc-18xwbcb-13 dbSdma"
+          className="styles__Input-sc-18xwbcb-12 jqkTFa"
           id="employeeId"
           name="employeeId"
           onChange={[Function]}
@@ -34,10 +34,10 @@ exports[`Search Component it matches the snapshot 1`] = `
       </div>
     </div>
     <div
-      className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      className="styles__Row-sc-18xwbcb-2 MjgCm"
     >
       <div
-        className="styles__Col-sc-18xwbcb-2 jTVgQF"
+        className="styles__Col-sc-18xwbcb-1 cOYgjR"
       >
         <a
           href="/view/"
@@ -45,7 +45,7 @@ exports[`Search Component it matches the snapshot 1`] = `
           onClick={[Function]}
         >
           <div
-            className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+            className="styles__Button-sc-18xwbcb-5 styles__ButtonPrimary-sc-18xwbcb-6 YFSZa"
           >
             View 
           </div>

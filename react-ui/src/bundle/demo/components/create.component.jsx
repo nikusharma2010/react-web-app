@@ -19,16 +19,14 @@ class CreateComponent extends React.Component {
         super(props);
         this.state = {
             confirmation: false,
-            error: ''
+            error: 'Test'
         };
     }
-    static getDerivedStateFromProps(nextProps) {
-
-        return {
-            error: nextProps.error
-        };
-
-    }
+    // static getDerivedStateFromProps(nextProps) {
+    //     return {
+    //         error: nextProps.error
+    //     };
+    // }
 	handleSubmit = (event) => {
 	    let user = {};
 	    user.id = event.target.employeeId.value;
@@ -52,9 +50,9 @@ class CreateComponent extends React.Component {
 	            {this.state.confirmation &&
 					<Notification message='!!! User Added Successfully !!!' />
 	            }
-	            {(this.state.error != null && this.state.error.trim().length > 0) &&
+	            {/* {(this.state.error != null && this.state.error.trim().length > 0) &&
 					<Notification message={this.state.error} />
-	            }
+	            } */}
 	            <Row>
 	                <Col>
 	                    <Link to='/list'><ButtonPrimary>Back</ButtonPrimary></Link>

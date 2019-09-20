@@ -1,4 +1,4 @@
-import * as constant from './constants';
+import * as constant from './action-types';
 
 const initialState = {
     isLoading: false,
@@ -10,52 +10,57 @@ const userReducer = (state = initialState, action) => {
     switch (action.type) {
     case constant.REQUEST_USERS:
     {
-        return Object.assign({}, state, { isLoading: true });
+        return { ...state, isLoading: true, error: '' };
     }
     case constant.RECEIVE_FAILURE:
     {
-        return Object.assign({}, state, {
+        return {
+            ...state,
             error: action.error,
             isLoading: false
-        });
+        };
     }
     case constant.RECEIVE_USERS:
     {
-        return Object.assign({}, state, {
+        return {
+            ...state,
             users: action.users,
             isLoading: false
-        });
+        };
     }
     case constant.REQUEST_USER:
     {
-        return Object.assign({}, state, { isLoading: true });
+        return { ...state, isLoading: true, error: '' };
     }
     case constant.RECEIVE_USER:
     {
-        return Object.assign({}, state, {
+        return {
+            ...state,
             user: action.user,
             isLoading: false
-        });
+        };
     }
     case constant.REQUEST_USER_ADD:
     {
-        return Object.assign({}, state, {});
+        return { ...state, error: '' };
     }
     case constant.RECEIVE_USER_ADD:
     {
-        return Object.assign({}, state, {
+        return {
+            ...state,
             created: true
-        });
+        };
     }
     case constant.REQUEST_USER_DELETE:
     {
-        return Object.assign({}, state, {});
+        return { ...state, error: '' };
     }
     case constant.RECEIVE_USER_DELETE:
     {
-        return Object.assign({}, state, {
+        return {
+            ...state,
             deleted: true
-        });
+        };
     }
     default:
         return state;

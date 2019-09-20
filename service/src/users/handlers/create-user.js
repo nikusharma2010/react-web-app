@@ -14,7 +14,7 @@ const createUserById = async (ctx) => {
   }
 };
 
-const validateInputs = (user) => {
+const validateInputs = (user) => {  
   if (!user) {
     throw new InvalidInputError('Invalid Emlpyee Details');
   }

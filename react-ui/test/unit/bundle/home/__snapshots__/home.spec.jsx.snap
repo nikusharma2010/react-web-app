@@ -3,58 +3,51 @@
 exports[`Home Component it matches the snapshot 1`] = `
 Array [
   <div
-    className="styles__Row-sc-18xwbcb-3 cYIdhM"
+    className="styles__Row-sc-18xwbcb-2 eCIkQt"
   >
     <div
-      className="styles__Col-sc-18xwbcb-2 jTVgQF"
+      className="styles__Col-sc-18xwbcb-1 cOYgjR"
     >
       <a
         href="/add"
+        onClick={[Function]}
       >
         <div
-          className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
+          className="styles__Button-sc-18xwbcb-5 styles__ButtonPrimary-sc-18xwbcb-6 YFSZa"
         >
           Add User
         </div>
       </a>
     </div>
     <div
-      className="styles__Col-sc-18xwbcb-2 eBtAHL"
+      className="styles__Col-sc-18xwbcb-1 FOjru"
     >
       <a
         href="/Search"
+        onClick={[Function]}
       >
         <div
-          className="styles__Button-sc-18xwbcb-6 styles__ButtonInfo-sc-18xwbcb-9 hUVWEa"
+          className="styles__Button-sc-18xwbcb-5 styles__ButtonInfo-sc-18xwbcb-8 ezRsHp"
         >
           Search User
         </div>
       </a>
     </div>
     <div
-      className="styles__Col-sc-18xwbcb-2 gAVkdx"
+      className="styles__Col-sc-18xwbcb-1 bLiUMj"
     >
       <a
         href="/list"
+        onClick={[Function]}
       >
         <div
-          className="styles__Button-sc-18xwbcb-6 styles__ButtonSuccess-sc-18xwbcb-8 dOgvkn"
+          className="styles__Button-sc-18xwbcb-5 styles__ButtonSuccess-sc-18xwbcb-7 cohRHv"
         >
           Users
         </div>
       </a>
     </div>
   </div>,
-  <div
-    className="styles__Row-sc-18xwbcb-3 iYGMAK"
-  >
-    <div
-      className="styles__Col-sc-18xwbcb-2 eBtAHL"
-    >
-      <b>
-        Loading...
-      </b>
-    </div>
-  </div>,
+  "ListComponent",
 ]
 `;

@@ -6,7 +6,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
 import ListComponent from '../../../../../src/bundle/demo/components/list.component';
-
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 const middlewares = [thunk];
@@ -22,6 +21,7 @@ const store = mockStore({
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("List Component", () => {
+    store.dispatch = jest.fn();
     test("it matches the snapshot", () => {
         const component = create(<Provider store={store}><ListComponent />)</Provider>);
         expect(component.toJSON()).toMatchSnapshot();
@@ -35,6 +35,7 @@ describe("Check Loading", () => {
             error: ''
         }
     });
+    storeLoading.dispatch = jest.fn();
     it('Check Value', () => {
         const wrapper = mount(<ListComponent store={storeLoading} match={{ params: { id: '1' } }} />);
         expect(wrapper.find('Spinner').length).toBe(1);
@@ -48,6 +49,7 @@ describe("Check Loading", () => {
             error: 'Test'
         }
     });
+    storeLoading.dispatch = jest.fn();
     it('Check Value', () => {
         const wrapper = mount(<ListComponent store={storeLoading} match={{ params: { id: '1' } }} />);
         expect(wrapper.find('Notification').length).toBe(1);

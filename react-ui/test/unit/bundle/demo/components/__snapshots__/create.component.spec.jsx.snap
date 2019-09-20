@@ -2,43 +2,52 @@
 
 exports[`Create Component it matches the snapshot 1`] = `
 <div
-  className="styles__Row-sc-18xwbcb-3 iYGMAK"
+  className="styles__Row-sc-18xwbcb-2 MjgCm"
 >
   <div
-    className="styles__Alert-sc-18xwbcb-14 hFgRsu"
+    className="styles__Row-sc-18xwbcb-2 MjgCm"
   >
     <div
-      className="styles__Row-sc-18xwbcb-3 iYGMAK"
+      className="styles__Col-sc-18xwbcb-1 cOYgjR"
     >
-      <strong>
-        Test
-      </strong>
+      <a
+        href="/list"
+        onClick={[Function]}
+      >
+        <div
+          className="styles__Button-sc-18xwbcb-5 styles__ButtonPrimary-sc-18xwbcb-6 YFSZa"
+        >
+          Back
+        </div>
+      </a>
     </div>
   </div>
-  <h3>
-    Create a New Employee record
-  </h3>
   <div
-    className="styles__FormDiv-sc-18xwbcb-11 rkpVF"
+    className="styles__FormDiv-sc-18xwbcb-10 hMsRmX"
   >
     <form
       onSubmit={[Function]}
     >
+      <div>
+        <h3>
+          Create a New Employee record
+        </h3>
+      </div>
       <div
-        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+        className="styles__Row-sc-18xwbcb-2 MjgCm"
       >
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <label>
             Employee Number
           </label>
         </div>
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <input
-            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            className="styles__Input-sc-18xwbcb-12 jqkTFa"
             id="employeeId"
             name="employeeId"
             type="text"
@@ -46,20 +55,20 @@ exports[`Create Component it matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+        className="styles__Row-sc-18xwbcb-2 MjgCm"
       >
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <label>
             First Name
           </label>
         </div>
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <input
-            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            className="styles__Input-sc-18xwbcb-12 jqkTFa"
             id="firstName"
             name="firstName"
             type="text"
@@ -67,20 +76,20 @@ exports[`Create Component it matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+        className="styles__Row-sc-18xwbcb-2 MjgCm"
       >
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <label>
             Last Name
           </label>
         </div>
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <input
-            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            className="styles__Input-sc-18xwbcb-12 jqkTFa"
             id="lastName"
             name="lastName"
             type="text"
@@ -88,20 +97,20 @@ exports[`Create Component it matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+        className="styles__Row-sc-18xwbcb-2 MjgCm"
       >
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <label>
             Mobile
           </label>
         </div>
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <input
-            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            className="styles__Input-sc-18xwbcb-12 jqkTFa"
             id="mobile"
             name="mobile"
             type="text"
@@ -109,20 +118,20 @@ exports[`Create Component it matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+        className="styles__Row-sc-18xwbcb-2 MjgCm"
       >
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <label>
             Email
           </label>
         </div>
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <input
-            className="styles__Input-sc-18xwbcb-13 dbSdma"
+            className="styles__Input-sc-18xwbcb-12 jqkTFa"
             id="email"
             name="email"
             type="text"
@@ -130,26 +139,13 @@ exports[`Create Component it matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        className="styles__Row-sc-18xwbcb-3 iYGMAK"
+        className="styles__Row-sc-18xwbcb-2 MjgCm"
       >
         <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
-        >
-          <a
-            href="/list"
-          >
-            <div
-              className="styles__Button-sc-18xwbcb-6 styles__ButtonPrimary-sc-18xwbcb-7 fKWqEi"
-            >
-              Back
-            </div>
-          </a>
-        </div>
-        <div
-          className="styles__Col-sc-18xwbcb-2 iXgqsR"
+          className="styles__Col-sc-18xwbcb-1 cOYgjR"
         >
           <button
-            className="styles__SubmitButton-sc-18xwbcb-12 dOKLAe"
+            className="styles__SubmitButton-sc-18xwbcb-11 ftzQju"
             style={Object {}}
           >
             Add User

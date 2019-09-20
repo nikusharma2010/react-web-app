@@ -2,10 +2,10 @@
 
 exports[`Notification Component it matches the snapshot 1`] = `
 <div
-  className="styles__Alert-sc-18xwbcb-14 hFgRsu"
+  className="styles__Alert-sc-18xwbcb-13 lbQqls"
 >
   <div
-    className="styles__Row-sc-18xwbcb-3 iYGMAK"
+    className="styles__Row-sc-18xwbcb-2 MjgCm"
   >
     <strong>
       Message Check

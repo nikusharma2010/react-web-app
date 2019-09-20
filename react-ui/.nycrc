@@ -7,8 +7,6 @@
         "src/**/*.js"
     ],
     "exclude": [
-        "**/swagger/index.js",
-        "tasks/**/*.js",
         "src/index.js"
     ],
     "reporter": [

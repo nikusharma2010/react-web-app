@@ -7,6 +7,9 @@ import store from '../../../../src/store/index';
 import { Provider } from 'react-redux';
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock('../../../../src/bundle/demo/components/list.component', () => () => 'ListComponent');
+
+
 describe("Home Component", () => {
     test("it matches the snapshot", () => {
         const component = create(<Provider  store={store}><CustomerHome/></Provider>);

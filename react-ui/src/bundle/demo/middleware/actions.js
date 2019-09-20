@@ -1,5 +1,8 @@
-import * as constant from './constants';
-import * as Service from './rest.service';
+import * as constant from './action-types';
+import axios from 'axios';
+
+const SERVICE_API = 'http://localhost:3070';
+
 /** Get List **/
 const requestUsers = () => {
     return {
@@ -21,17 +24,16 @@ const receiveError = (error) => {
 /** return all User list **/
 export const getUsers = () => {
     return async dispatch => {
-        dispatch(requestUsers());
-        const response = await Service.fetchUsers();
-        if (response.status === 200) {
-            let users = await response.json();
-            dispatch(receiveUsers(users));
-        } else {
-            let errorMessage = response.statusText;
-            dispatch(receiveError(errorMessage));
+        try {
+            dispatch(requestUsers());
+            const res = await axios.get(SERVICE_API + '/users');
+            dispatch(receiveUsers(res.data));
+        } catch (error) {
+            dispatch(receiveError(error.response.data.message));
         }
     };
 };
+
 /** Get User **/
 const requestUser = () => {
     return {
@@ -48,15 +50,12 @@ const receiveUser = (json) => {
 /** return all User list **/
 export const getUser = (id) => {
     return async dispatch => {
-        dispatch(requestUser());
-        const response = await Service.fetchUser(id);
-        if (response.status === 200) {
-            let user = await response.json();
-            dispatch(receiveUser(user));
-        } else {
-            let error = await response.json();
-            let errorMessage = 'Error Code - ' + error.statusCode + ' - ' + error.message;
-            dispatch(receiveError(errorMessage));
+        try {
+            dispatch(requestUser());
+            const res = await axios.get(SERVICE_API + '/user/' + id);
+            dispatch(receiveUser(res.data));
+        } catch (error) {
+            dispatch(receiveError(error.response.data.message));
         }
     };
 };
@@ -75,15 +74,12 @@ const receiveAddUser = () => {
 /** return all User list **/
 export const createUser = (user) => {
     return async dispatch => {
-        dispatch(requestAddUser());
-        const response = await Service.addUser(user);
-        if (response.status === 200) {
-            await response.json();
-            dispatch(receiveAddUser());
-        } else {
-            let error = await response.json();
-            let errorMessage = 'Error Code - ' + error.statusCode + ' - ' + error.message;
-            dispatch(receiveError(errorMessage));
+        try {
+            dispatch(requestAddUser());
+            const res = await axios.post(SERVICE_API + '/user/', user);
+            dispatch(receiveAddUser(res.data));
+        } catch (error) {
+            dispatch(receiveError(error.response.data.message));
         }
     };
 };
@@ -101,8 +97,13 @@ const receiveDeleteUser = () => {
 };
 /** return all User list **/
 export const removeUser = (id) => {
-    return dispatch => {
-        dispatch(requestDeleteUser());
-        return Service.deleteUser(id).then(dispatch(receiveDeleteUser()));
+    return async dispatch => {
+        try {
+            dispatch(requestDeleteUser());
+            const res = await axios.delete(SERVICE_API + '/user/' + id);
+            dispatch(receiveDeleteUser(res.data));
+        } catch (error) {
+            dispatch(receiveError(error.response.data.message));
+        }
     };
 };
