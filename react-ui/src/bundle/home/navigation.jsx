@@ -16,12 +16,12 @@ export default class NavigationBar extends React.Component {
                     </Link>
                 </Col>
                 <Col textAlign="center">
-                    <Link to="/Search">
+                    <Link to="/find">
                         <ButtonInfo>Search User</ButtonInfo>
                     </Link>
                 </Col>
                 <Col textAlign="right">
-                    <Link to="/list">
+                    <Link to="/users">
                         <ButtonSuccess>Users</ButtonSuccess>
                     </Link>
                 </Col>

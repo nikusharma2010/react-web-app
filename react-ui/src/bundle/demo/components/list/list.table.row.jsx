@@ -13,7 +13,7 @@ class ListTableRow extends React.Component {
         const { user } = this.props;
         return (
 
-            <Row bottomBorder="true">
+            <Row bottomBorder="true" id={'user_id_' + user.id}>
                 <Col textAlign="center">
 
                     <NameLabel>

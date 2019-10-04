@@ -11,7 +11,7 @@ exports[`Create Component it matches the snapshot 1`] = `
       className="styles__Col-sc-18xwbcb-1 cOYgjR"
     >
       <a
-        href="/list"
+        href="/users"
         onClick={[Function]}
       >
         <div

@@ -21,7 +21,6 @@ const store = mockStore({
 
 Enzyme.configure({ adapter: new Adapter() });
 
-
 describe("Find Component", () => {
     store.dispatch = jest.fn();
     test("it matches the snapshot", () => {
@@ -71,7 +70,7 @@ describe("Form Submit", () => {
                 mobile: '003001234567890'
             },
             isLoading: false,
-            deleted: false
+            deleted: true
         }
     });
     store.dispatch = jest.fn();

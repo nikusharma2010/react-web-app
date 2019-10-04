@@ -11,7 +11,7 @@ exports[`Find Component it matches the snapshot 1`] = `
       className="styles__Col-sc-18xwbcb-1 cOYgjR"
     >
       <a
-        href="/list"
+        href="/users"
         onClick={[Function]}
       >
         <div
@@ -101,7 +101,6 @@ exports[`Find Component it matches the snapshot 1`] = `
             className="styles__Button-sc-18xwbcb-5 styles__ButtonDanger-sc-18xwbcb-9 jRprLs"
             id="deleteUser"
             onClick={[Function]}
-            style={Object {}}
           >
             Delete
           </div>
@@ -117,161 +116,23 @@ exports[`Form Submit Check Value 1`] = `
   <Router history={{...}}>
     <ConnectFunction store={{...}} deleteUser={[Function: mockConstructor]} match={{...}}>
       <FindComponent store={{...}} deleteUser={[Function: mockConstructor]} match={{...}} user={{...}} isLoading={false} error={[undefined]} dispatch={[Function: mockConstructor]}>
-        <styles__Row>
-          <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-            <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-              <styles__Row>
-                <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                  <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-                    <styles__Col>
-                      <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                        <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                          <Link to=\\"/list\\">
-                            <a onClick={[Function: onClick]} href=\\"/list\\">
-                              <styles__ButtonPrimary>
-                                <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                  <div className=\\"styles__Button-sc-18xwbcb-5 styles__ButtonPrimary-sc-18xwbcb-6 YFSZa\\">
-                                    Back
-                                  </div>
-                                </StyledComponent>
-                              </styles__ButtonPrimary>
-                            </a>
-                          </Link>
-                        </div>
-                      </StyledComponent>
-                    </styles__Col>
-                  </div>
-                </StyledComponent>
-              </styles__Row>
-              <styles__Row>
-                <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                  <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-                    <styles__Col>
-                      <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                        <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                          <styles__FormDiv>
-                            <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                              <div className=\\"styles__FormDiv-sc-18xwbcb-10 hMsRmX\\">
-                                <styles__Row>
-                                  <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                    <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                            <label>
-                                              Employee Number
-                                            </label>
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                            2
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                    </div>
-                                  </StyledComponent>
-                                </styles__Row>
-                                <styles__Row>
-                                  <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                    <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                             
-                                            <label>
-                                              Name
-                                            </label>
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                            Simon Smith
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                    </div>
-                                  </StyledComponent>
-                                </styles__Row>
-                                <styles__Row>
-                                  <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                    <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                            <label>
-                                              Email
-                                            </label>
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                            maggie@thesimpsons.com
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                    </div>
-                                  </StyledComponent>
-                                </styles__Row>
-                                <styles__Row>
-                                  <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                    <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                            <label>
-                                              Mobile
-                                            </label>
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                      <styles__Col>
-                                        <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                            003001234567890
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__Col>
-                                    </div>
-                                  </StyledComponent>
-                                </styles__Row>
-                              </div>
-                            </StyledComponent>
-                          </styles__FormDiv>
-                          <styles__Row>
-                            <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                              <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
-                                <styles__Col>
-                                  <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
-                                    <div className=\\"styles__Col-sc-18xwbcb-1 cOYgjR\\">
-                                      <styles__ButtonDanger id=\\"deleteUser\\" onClick={[Function]} style={{...}}>
-                                        <StyledComponent id=\\"deleteUser\\" onClick={[Function]} style={{...}} forwardedComponent={{...}} forwardedRef={{...}}>
-                                          <div id=\\"deleteUser\\" onClick={[Function]} style={{...}} className=\\"styles__Button-sc-18xwbcb-5 styles__ButtonDanger-sc-18xwbcb-9 jRprLs\\">
-                                            Delete
-                                          </div>
-                                        </StyledComponent>
-                                      </styles__ButtonDanger>
-                                    </div>
-                                  </StyledComponent>
-                                </styles__Col>
-                              </div>
-                            </StyledComponent>
-                          </styles__Row>
-                        </div>
-                      </StyledComponent>
-                    </styles__Col>
-                  </div>
-                </StyledComponent>
-              </styles__Row>
-            </div>
-          </StyledComponent>
-        </styles__Row>
+        <Notification message=\\"!!! User Deleted Successfully !!!\\">
+          <styles__Alert>
+            <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
+              <div className=\\"styles__Alert-sc-18xwbcb-13 lbQqls\\">
+                <styles__Row>
+                  <StyledComponent forwardedComponent={{...}} forwardedRef={{...}}>
+                    <div className=\\"styles__Row-sc-18xwbcb-2 MjgCm\\">
+                      <strong>
+                        !!! User Deleted Successfully !!!
+                      </strong>
+                    </div>
+                  </StyledComponent>
+                </styles__Row>
+              </div>
+            </StyledComponent>
+          </styles__Alert>
+        </Notification>
       </FindComponent>
     </ConnectFunction>
   </Router>

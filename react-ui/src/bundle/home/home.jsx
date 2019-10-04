@@ -24,7 +24,7 @@ export default class CustomerHome extends React.Component {
             //         <Route path="/" exact component={ListComponent} />
             //     </React.Suspense>
             //     <React.Suspense fallback="Loading">
-            //         <Route path="/list" component={ListComponent} />
+            //         <Route path="/users" component={ListComponent} />
             //     </React.Suspense>
             //     <React.Suspense fallback="Loading">
             //         <Route path="/add" component={CreateComponent} />
@@ -39,9 +39,9 @@ export default class CustomerHome extends React.Component {
             <Router>
                 <NavigationBar></NavigationBar>
                 <Route path="/" exact component={ListComponent} />
-                <Route path="/list" component={ListComponent} />
+                <Route path="/users" component={ListComponent} />
                 <Route path="/add" component={CreateComponent} />
-                <Route path="/search" component={SearchComponent} />
+                <Route path="/find" component={SearchComponent} />
                 <Route path="/view/:id" component={FindComponent} />
             </Router>
         );

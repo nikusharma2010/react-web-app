@@ -11,7 +11,10 @@ module.exports = {
         'src/**/*.{js,jsx}'
     ],
     coveragePathIgnorePatterns: [
-        'src/index.js'
+        'src/index.js',
+    ],
+    testPathIgnorePatterns: [
+        '<rootDir>/test/e2e',
     ],
     collectCoverage: true,
     coverageReporters: [

@@ -17,7 +17,7 @@ exports[`Search Component it matches the snapshot 1`] = `
         className="styles__Col-sc-18xwbcb-1 cOYgjR"
       >
         <label>
-          Number 
+          Employee No 
         </label>
       </div>
       <div

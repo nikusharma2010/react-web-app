@@ -48,18 +48,20 @@ class FindComponent extends React.Component {
 
 	render() {
 	    let user = this.state.userObj;
-	    let deleted = this.state.deleted;
 
 	    if (this.state.isLoading === true) {
 	        return <Spinner />;
 	    } else if (this.state.error != null && this.state.error.trim().length > 0) {
 	        return <Notification message={this.state.error} />;
 	    }
+	    else if (this.state.deleted) {
+	        return <Notification message={'!!! User Deleted Successfully !!!'} />;
+	    }
 	    return (
 	        <Row>
 	            <Row>
 	                <Col>
-	                    <Link to='/list'><ButtonPrimary>Back</ButtonPrimary></Link>
+	                    <Link to='/users'><ButtonPrimary>Back</ButtonPrimary></Link>
 	                </Col>
 	            </Row>
 	            <Row>
@@ -93,7 +95,7 @@ class FindComponent extends React.Component {
 	                    </FormDiv>
 	                    <Row>
 	                        <Col >
-	                            <ButtonDanger id="deleteUser" onClick={this.deleteUser} style={!deleted ? {} : { display: 'none' }}>Delete</ButtonDanger>
+	                            <ButtonDanger id="deleteUser" onClick={this.deleteUser}>Delete</ButtonDanger>
 	                        </Col>
 	                    </Row>
 

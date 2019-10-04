@@ -22,11 +22,11 @@ class CreateComponent extends React.Component {
             error: 'Test'
         };
     }
-    // static getDerivedStateFromProps(nextProps) {
-    //     return {
-    //         error: nextProps.error
-    //     };
-    // }
+	// static getDerivedStateFromProps(nextProps) {
+	//     return {
+	//         error: nextProps.error
+	//     };
+	// }
 	handleSubmit = (event) => {
 	    let user = {};
 	    user.id = event.target.employeeId.value;
@@ -47,7 +47,8 @@ class CreateComponent extends React.Component {
 
 	        <Row>
 
-	            {this.state.confirmation &&
+	            {
+	                this.state.confirmation &&
 					<Notification message='!!! User Added Successfully !!!' />
 	            }
 	            {/* {(this.state.error != null && this.state.error.trim().length > 0) &&
@@ -55,7 +56,7 @@ class CreateComponent extends React.Component {
 	            } */}
 	            <Row>
 	                <Col>
-	                    <Link to='/list'><ButtonPrimary>Back</ButtonPrimary></Link>
+	                    <Link to='/users'><ButtonPrimary>Back</ButtonPrimary></Link>
 	                </Col>
 	            </Row>
 

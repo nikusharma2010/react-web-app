@@ -22,7 +22,7 @@ class SearchComponent extends React.Component {
                 <FormDiv>
 
                     <Row>
-                        <Col><label>Number </label></Col>
+                        <Col><label>Employee No </label></Col>
                         <Col>
                             <Input type="text" id="employeeId" name="employeeId" value={this.state.employeeId} onChange={this.handleChange} />
                         </Col>

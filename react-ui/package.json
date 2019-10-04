@@ -12,7 +12,8 @@
         "prepush": "npm run lint",
         "test": "jest",
         "test:watch": "npm run test -- --watch",
-        "test:cover": "npm run test --coverage"
+        "test:cover": "npm run test --coverage",
+        "e2e:test": "URL=http://localhost:8080/ mocha test test/e2e/e2e.test.js"
     },
     "author": "Niku",
     "license": "TEST",
@@ -35,6 +36,7 @@
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.8.0",
         "babel-loader": "^8.0.4",
+        "chromedriver": "^76.0.0",
         "clean-webpack-plugin": "^1.0.1",
         "core-js": "3",
         "css-loader": "^2.1.0",
@@ -57,6 +59,7 @@
         "eslint-plugin-standard": "^4.0.0",
         "expect": "^24.8.0",
         "extract-text-webpack-plugin": "^3.0.2",
+        "faker": "^4.1.0",
         "fetch-mock": "^7.3.3",
         "file-loader": "^3.0.1",
         "html-webpack-plugin": "^3.2.0",
@@ -78,6 +81,7 @@
         "redux-logger": "^3.0.6",
         "redux-mock-store": "^1.5.3",
         "sass-loader": "^7.1.0",
+        "selenium-webdriver": "^4.0.0-alpha.5",
         "style-loader": "^0.23.1",
         "url-loader": "^1.1.2",
         "webpack": "^4.29.0",
@@ -87,6 +91,7 @@
         "webpack-merge": "^4.1.5"
     },
     "dependencies": {
+        "@types/selenium-webdriver": "^4.0.2",
         "axios": "^0.19.0",
         "cross-env": "^6.0.0",
         "prop-types": "^15.7.2",

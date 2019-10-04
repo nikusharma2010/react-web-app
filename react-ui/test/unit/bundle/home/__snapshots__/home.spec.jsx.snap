@@ -23,7 +23,7 @@ Array [
       className="styles__Col-sc-18xwbcb-1 FOjru"
     >
       <a
-        href="/Search"
+        href="/find"
         onClick={[Function]}
       >
         <div
@@ -37,7 +37,7 @@ Array [
       className="styles__Col-sc-18xwbcb-1 bLiUMj"
     >
       <a
-        href="/list"
+        href="/users"
         onClick={[Function]}
       >
         <div
