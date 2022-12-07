@@ -55,7 +55,7 @@
     "koa-logger": "^3.2.0",
     "koa-mysql": "^1.0.3",
     "koa-router": "^7.4.0",
-    "lint-staged": "^8.1.0",
+    "lint-staged": "^13.1.0",
     "moment": "^2.22.2",
     "mysql": "^2.16.0",
     "nconf": "^0.10.0",
